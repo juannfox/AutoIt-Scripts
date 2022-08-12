@@ -1,3 +1,4 @@
+
 # TempTerminator
 A useful -lite and silent- executable that removes temporary files from a Windows system, at both User (every user) and System level (requires valid permissions).
 It targets the following paths (not case sensitive):
@@ -11,6 +12,8 @@ It targets the following paths (not case sensitive):
 - %APPDATA%\Local\Microsoft\Windows\Temporary Internet Files
 - %APPDATA%\Local\Microsoft\Windows\INetCache
 
+Files in use are not deleted.
+
 #### Note
 This is a pretty old script from back when I started scripting/automating, so theres a lot of things that could be made better (modularization, DRYness, return values, dynamic parameters, etc).
 I dediced to leave this as it is, since I know for a fact it is a fully working solution. Back in my Help Desk days, I used to run this script against docens of hosts per day with success.
@@ -21,6 +24,8 @@ Simply execute the program and wait for it to finish (compiling necessary, as I 
 ```
 TempTerminator.exe
 ```
+![enter image description here](https://drive.google.com/uc?view=export&id=13a5RFOY85bhbYrat-APlrJEAOnS-ZWHH)
+You will see that the script deleted files in the target directory, except for those in use.
 ## Requirements
 ### Runtime
 **AutoIt** 3 or higher.
