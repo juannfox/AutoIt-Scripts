@@ -1,6 +1,3 @@
-#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Outfile=rzk.exe
-#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 ; #UDF# =======================================================================================================================
 ; Name ..........: Temp-Terminator
 ; Description ...: A useful -lite and silent- executable that removes temporary files from a Windows system, at both User (every user) and System level (requires valid permissions).
