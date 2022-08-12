@@ -19,6 +19,6 @@ And get the desired output, either by file/console/clipboard, depending on the s
   For example: I press the key "Windows", then write `upper` and convert any text in my clipboard to upper case.
   Note that the extension (i.e. ".exe") can be omitted when the file is executable.
 
-##Requirements
+## Requirements
 
 **AutoIt** 3 or higher.
