@@ -19,9 +19,13 @@ Execute the program and select the file through the GUI and view the result.
 CodeLine_Counter.exe
 ```
 ![Open file](https://drive.google.com/uc?export=view&id=1tuac-IFoiEgyQOtJkUGQlehfvoOyRJ-I)
+
 Then insert the comment character (defaults to ";"):
+
 ![Enter char](https://drive.google.com/uc?export=view&id=1OT_dbqWW-dMAHl95GiWJWOA3oVOVzsLe)
+
 And view your results:
+
 ![View result](https://drive.google.com/uc?exporrt=view&id=19aDPHKDnW8kYSRZbppLwwVzT0B6U42Uo)
 ## Requirements
 ### Runtime
