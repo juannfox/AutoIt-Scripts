@@ -5,7 +5,6 @@
 ;						- Commented lines (Requires a comment character like ";","//","#", etc)
 ;						- Empty lines
 ;						- Total characters
-;						- Total functions (requires a function keyword, like in Bash, Powershell or AutoIt)
 ;
 ; Comments ......: This is a pretty old script from back when I started scripting/automating, so theres a lot of things that could be made better (modularization, DRYness, return values,
 ;					dynamic parameters, etc).
@@ -38,16 +37,14 @@ $MSG = "Total lines: " & $RC [0] & @CRLF _
 		& "Code lines: " & $RC [1] & @CRLF _
 		& "Commented lines: " & $RC [2] & @CRLF _
 		& "Empty lines: " & $RC [3] & @CRLF _
-		& "Total characters: " & $RC [4] & @CRLF _
-		& "Total functions: " & $RC [1]
+		& "Total characters: " & $RC [4]
 MsgBox ($MB_OK, $APP, $MSG)
 
 	;
 
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: _FileCountLinesExt
-; Description ...:  Counts Total lines in a file and also provides useful information on Commented/Empty lines, total characters
-;					and even amount of Functions defined in it.
+; Description ...:  Counts Total lines in a file and also provides useful information on Commented/Empty lines and total characters.
 ; Syntax ........: _FileCountLinesExt ($FilePath, $CommentChar[, $Mode = 1])
 ; Parameters ....: $FilePath            - Text file full path.
 ;                  $CommentChar         - Character to determine when a line is commented.
@@ -65,13 +62,11 @@ MsgBox ($MB_OK, $APP, $MSG)
 ; Link ..........:
 ; Example .......: No
 ; ===============================================================================================================================
-Func _FileCountLinesExt ($FilePath, $CommentChar = ";", $Mode = 1, $FuncKeyWord = "Func")
+Func _FileCountLinesExt ($FilePath, $CommentChar = ";", $Mode = 1)
 
 	Local $CommentedLineCount = "0"
 	Local $EmptyLineCount = "0"
 	Local $CodeLineCount = "0"
-	Local $FuncCount = "0"
-	Local $KeyWordLen = StringLen ($FuncKeyWord)
 	If $Mode = "" Then $Mode = 1 ;Default mode
 
 	Local $File = FileOpen ($FilePath)
@@ -93,8 +88,6 @@ Func _FileCountLinesExt ($FilePath, $CommentChar = ";", $Mode = 1, $FuncKeyWord 
 					$EmptyLineCount = $EmptyLineCount + 1 ;Empty lines.
 				Else
 					$CodeLineCount = $CodeLineCount + 1 ;Code lines.
-					$LineStart = StringMid ($LineArray [$i],1,$KeyWordLen)
-					If $LineStart = $FuncKeyWord Then $FuncCount = $FuncCount + 1 ;Func count.
 				EndIf
 		EndSwitch
 
@@ -114,13 +107,12 @@ Func _FileCountLinesExt ($FilePath, $CommentChar = ";", $Mode = 1, $FuncKeyWord 
 		Case 4 ;Returns Total lines and Total Characters as @extended.
 			Return SetExtended ($TotalChars, $TotalLineCount)
 		Case 5 ;Returns Total lines and Total Characters as @extended.
-			Local $Array [6]
+			Local $Array [5]
 			$Array [0] = $TotalLineCount
 			$Array [1] = $CodeLineCount
 			$Array [2] = $CommentedLineCount
 			$Array [3] = $EmptyLineCount
 			$Array [4] = $TotalChars
-			$Array [5] = $FuncCount
 
 			Return $Array
 	EndSwitch
