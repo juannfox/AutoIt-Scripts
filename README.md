@@ -2,6 +2,7 @@
 
 Various [AutoIt](https://www.autoitscript.com/site/) scripts I used over the years to make my life easier as an IT worker.  
 [View the official language documentation](https://www.autoitscript.com/autoit3/docs/)
+Note that in some scripts I use the Hungarian Notation for variables, as suggeted by AutoIt's authors: https://en.wikipedia.org/wiki/Hungarian_notation
 
 ## Usage
 ### Previous steps
