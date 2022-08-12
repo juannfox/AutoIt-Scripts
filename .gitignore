@@ -4,3 +4,7 @@
 # Auto It compilation files
 *.exe
 *.dll
+
+#Backup files
+*.bak
+*.bkp
